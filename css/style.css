@@ -1,0 +1,148 @@
+
+h1, h2, h3, h4, h5{
+	color:#4A4E69 !important;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	color: #4A4E69;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.about-left {
+	padding-right:2%;
+	overflow: hidden;
+	padding: 25px 3% 25px 0;
+}
+
+.about-right {
+	overflow: hidden;
+	padding: 25px 0px 25px 3%;
+}
+
+.line-right {
+	border-right: 1px solid grey;
+}
+
+.animate-right {
+	animation: slide-right 2s ease;
+	position: relative;
+}
+
+.animate-left {
+	animation: slide-left 2s ease;
+	position: relative;
+}
+
+@keyframes slide-right{
+  from {
+		left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-left{
+  from {
+		right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.profile-pic {
+	box-shadow: 0px 4px 6px 2px lightgrey;
+  border-radius: 50%
+}
+
+.m-t-1 {
+	margin-top:1em;
+}
+
+.p-t-1 {
+	padding-top:1em;
+}
+
+.devicons {
+	padding:25px;
+}
+
+.devicons .holder {
+	margin:10px;
+	display: inline-block;
+}
+
+.devicons .holder i {
+	font-size:5em;
+}
+
+.devicons.tools .holder i {
+	font-size:7em;
+}
+
+.navbar-default {
+	background-color: #93ca44;
+	border: none;
+	border-radius:0;
+}
+
+.navbar-text a.navbar-link {
+	color:white;
+	font-size: 1.3em;
+	font-weight: bolder;
+}
+
+.row-about {
+	padding:200px 0;
+}
+
+.row-footer {
+	padding: 65px 10px;
+}
+
+.work-item-row {
+	/*padding: 10% 0;*/
+}
+
+.row-tools {
+  padding: 50px 0;
+}
+
+.linkedin-link {
+	position: relative;
+	transition: all 0.1s ease;
+	top:0;
+	display: inline-block;
+	margin-top:25px;
+}
+
+.linkedin-link:hover {
+	top:-2px;
+}
+
+.linkedin-link:hover .linkedin-btn {
+	box-shadow: 0px 4px 5px 1px lightgrey;
+}
+
+.linkedin-btn {
+	padding: 15px;
+	box-shadow: 0px 2px 5px 1px lightgrey;
+}
+
+.btn-launch {
+	width:100%;
+	max-width:200px;
+	background-color: #549657;
+	color:white;
+	box-shadow: 0px 2px 5px 1px darkgrey;
+}
+
+.btn-launch:hover,
+.btn-launch:focus {
+	color: white;
+	background: #3d7140;
+}
