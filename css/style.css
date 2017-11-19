@@ -23,3 +23,8 @@
 	border-radius:50%;
 	width:200px;
 }
+
+.project-img {
+	width:200px;
+	max-width:100%;
+}
