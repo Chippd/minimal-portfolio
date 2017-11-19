@@ -4,12 +4,6 @@
 // some global variables
 let pageHeight, ticking, screenHeight, currentEl, projectTextArr, projectImgArr, colorArr;
 
-colorArr = [
-	"#d8dcff",
-	"#aeadf0",
-	"#c38d94"
-]
-
 // as the user scrolls, poll the .main-row element for its .scrollTop position
 // reference: https://developer.mozilla.org/en-US/docs/Web/Events/scroll
 // reference for above reference (lol): http://www.html5rocks.com/en/tutorials/speed/animations/
@@ -86,8 +80,12 @@ function applyElement(x){
 	projectTextArr[x].style.display = "initial";
 	projectImgArr[x].style.display = "initial";
 
-	// Set color on body
-	document.getElementById('body').style.background = colorArr[x];
+	// Set background color on body
+	// get data-bgcolor attribute from .project-text element, white as fallback
+	document.getElementById('body').style.background = projectTextArr[x].dataset.bgcolor || "white";
+
+	// Set text color on body, get it from data attribute, black as fallback
+	document.getElementById('body').style.color = projectTextArr[x].dataset.textcolor || "black";
 
 
 }
