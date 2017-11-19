@@ -1,7 +1,11 @@
 
+
+* {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
 #main-row	{
   position: fixed;
-  top: 0;
   width: 100%;
 }
 
@@ -31,14 +35,18 @@
 
 .hidden {
 	display: none;
+	-webkit-animation: fadeOut 0.5s /* Safari 4+ */;
+  -moz-animation:    fadeOut 0.5s /* Fx 5+ */;
+  -o-animation:      fadeOut 0.5s /* Opera 12+ */;
+  animation:         fadeOut 0.5s /* IE 10+, Fx 29+ */;
 }
 
 .shown {
 	display: initial;
-	-webkit-animation: fadeIn 0.25s /* Safari 4+ */;
-  -moz-animation:    fadeIn 0.25s /* Fx 5+ */;
-  -o-animation:      fadeIn 0.25s /* Opera 12+ */;
-  animation:         fadeIn 0.25s /* IE 10+, Fx 29+ */;
+	-webkit-animation: fadeIn 0.5s /* Safari 4+ */;
+  -moz-animation:    fadeIn 0.5s /* Fx 5+ */;
+  -o-animation:      fadeIn 0.5s /* Opera 12+ */;
+  animation:         fadeIn 0.5s /* IE 10+, Fx 29+ */;
 }
 
 
@@ -57,4 +65,21 @@
 @keyframes fadeIn {
   0%   { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
 }
