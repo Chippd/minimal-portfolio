@@ -69,16 +69,22 @@ function applyElement(x){
 	// for each project and project-img
 	// hide all
 	for (var i = projectImgArr.length - 1; i >= 0; i--) {
-		projectImgArr[i].style.display = "none"
+		// projectImgArr[i].style.display = "none"
+		projectImgArr[i].classList.add("hidden")
+		projectImgArr[i].classList.remove("shown")
 	}
 
 	for (var i = projectTextArr.length - 1; i >= 0; i--) {
-		projectTextArr[i].style.display = "none"
+		projectTextArr[i].classList.add("hidden")
+		projectTextArr[i].classList.remove("shown")
 	}
 
 	// Show appropriate project
-	projectTextArr[x].style.display = "initial";
-	projectImgArr[x].style.display = "initial";
+	projectTextArr[x].classList.remove("hidden");
+	projectImgArr[x].classList.remove("hidden");
+
+	projectTextArr[x].classList.add("shown");
+	projectImgArr[x].classList.add("shown");
 
 	// Set background color on body
 	// get data-bgcolor attribute from .project-text element, white as fallback

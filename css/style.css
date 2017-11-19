@@ -28,3 +28,33 @@
 	width:200px;
 	max-width:100%;
 }
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: initial;
+	-webkit-animation: fadeIn 0.25s /* Safari 4+ */;
+  -moz-animation:    fadeIn 0.25s /* Fx 5+ */;
+  -o-animation:      fadeIn 0.25s /* Opera 12+ */;
+  animation:         fadeIn 0.25s /* IE 10+, Fx 29+ */;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
