@@ -82,7 +82,9 @@ function applyElement(x){
 	// Set text color on body, get it from data attribute, black as fallback
 	document.getElementById('body').style.color = pageSectionArr[x].dataset.textcolor || "black";
 
+	// Show appropriate project
 	pageSectionArr[x].classList.remove('hidden');
+	pageSectionArr[x].classList.add("shown");
 
 
 }

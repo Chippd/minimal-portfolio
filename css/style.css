@@ -44,7 +44,7 @@
 }
 
 .shown {
-	display: initial;
+	/*display: initial;*/
 	-webkit-animation: fadeIn 0.5s /* Safari 4+ */;
   -moz-animation:    fadeIn 0.5s /* Fx 5+ */;
   -o-animation:      fadeIn 0.5s /* Opera 12+ */;
