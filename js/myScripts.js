@@ -2,7 +2,7 @@
 
 
 // some global variables
-let pageHeight, ticking, screenHeight, currentEl, projectTextArr, projectImgArr, colorArr;
+let pageHeight, ticking, screenHeight, currentEl, pageSectionArr
 
 // as the user scrolls, poll the .main-row element for its .scrollTop position
 // reference: https://developer.mozilla.org/en-US/docs/Web/Events/scroll
@@ -50,12 +50,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Get height of screen
   screenHeight = screen.height
 
-  // Get all projects on page and populate arrays
-  projectTextArr = document.getElementsByClassName('project-text');
-  projectImgArr = document.getElementsByClassName('project-img');
+  // Get all page-sections on page and populate arrays
+  pageSectionArr = document.getElementsByClassName('page-section');
+
+  console.log('project section arr:', pageSectionArr);
 
   // set total page height depending on number of projects
-  pageHeight = screenHeight * projectTextArr.length;
+  pageHeight = screenHeight * pageSectionArr.length;
+
   document.getElementById('body').style.height = pageHeight+"px";
 
   // Check the scroll position, show appropriate project
@@ -68,30 +70,19 @@ function applyElement(x){
 
 	// for each project and project-img
 	// hide all
-	for (var i = projectImgArr.length - 1; i >= 0; i--) {
+	for (var i = pageSectionArr.length - 1; i >= 0; i--) {
 		// projectImgArr[i].style.display = "none"
-		projectImgArr[i].classList.add("hidden")
-		projectImgArr[i].classList.remove("shown")
+		pageSectionArr[i].classList.add("hidden");
 	}
-
-	for (var i = projectTextArr.length - 1; i >= 0; i--) {
-		projectTextArr[i].classList.add("hidden")
-		projectTextArr[i].classList.remove("shown")
-	}
-
-	// Show appropriate project
-	projectTextArr[x].classList.remove("hidden");
-	projectImgArr[x].classList.remove("hidden");
-
-	projectTextArr[x].classList.add("shown");
-	projectImgArr[x].classList.add("shown");
 
 	// Set background color on body
 	// get data-bgcolor attribute from .project-text element, white as fallback
-	document.getElementById('body').style.background = projectTextArr[x].dataset.bgcolor || "white";
+	document.getElementById('body').style.background = pageSectionArr[x].dataset.bgcolor || "white";
 
 	// Set text color on body, get it from data attribute, black as fallback
-	document.getElementById('body').style.color = projectTextArr[x].dataset.textcolor || "black";
+	document.getElementById('body').style.color = pageSectionArr[x].dataset.textcolor || "black";
+
+	pageSectionArr[x].classList.remove('hidden');
 
 
 }
