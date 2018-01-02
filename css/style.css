@@ -13,7 +13,21 @@
   display: flex;
 }
 
-h3 {
+.col.intro-col {
+  justify-content: center;
+  text-align: center !important;
+}
+
+.intro-col h1, 
+.intro-col h2 {
+  margin:5px;
+}
+
+.intro-col h2 {
+  font-size:1.1em;
+}
+
+.col h3 {
   margin:0;
 }
 

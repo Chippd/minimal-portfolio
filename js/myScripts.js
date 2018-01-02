@@ -4,13 +4,15 @@
 // some global variables
 let pageHeight, ticking, screenHeight, currentEl, pageSectionArr
 
-// as the user scrolls, poll the .main-row element for its .scrollTop position
 // reference: https://developer.mozilla.org/en-US/docs/Web/Events/scroll
-// reference for above reference (lol): http://www.html5rocks.com/en/tutorials/speed/animations/
-function doSomething(scroll_pos) {
+// reference for above reference: http://www.html5rocks.com/en/tutorials/speed/animations/
+function checkElement(scroll_pos) {
+
+	console.log('scrollpos:', scroll_pos)
+	console.log('x = ', Math.floor(scroll_pos / screenHeight))
 
   // how many times does pageHeight go into scrollPos
-  let x = Math.round(scroll_pos / screenHeight);
+  let x = Math.floor(scroll_pos / screenHeight);
 
   // set appropriate element if not already
   if(currentEl !== x){
@@ -25,7 +27,7 @@ function checkScroll(){
 	if (!ticking) {
 
 	  window.requestAnimationFrame(function() {
-	    doSomething(last_known_scroll_position);
+	    checkElement(last_known_scroll_position);
 	    ticking = false;
 	  });
 	   
@@ -53,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Get all page-sections on page and populate arrays
   pageSectionArr = document.getElementsByClassName('page-section');
 
-  console.log('project section arr:', pageSectionArr);
-
   // set total page height depending on number of projects
   pageHeight = screenHeight * pageSectionArr.length;
 
@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 function applyElement(x){
+
+	// Set currentEl
+	currentEl = x;
 
 	// for each project and project-img
 	// hide all
