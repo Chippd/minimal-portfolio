@@ -33,7 +33,7 @@ h3 {
   flex-direction: column;
   text-align: center;
   justify-content: flex-end;
-  padding: 0 5% 5% 5%;
+  padding: 0 5% 0% 5%;
   flex-grow: 1;
   flex:1;
 }
@@ -90,6 +90,24 @@ h3 {
   -moz-animation:    fadeIn 0.5s /* Fx 5+ */;
   -o-animation:      fadeIn 0.5s /* Opera 12+ */;
   animation:         fadeIn 0.5s /* IE 10+, Fx 29+ */;
+}
+
+.svgicon {
+  width:40px;
+  margin:5px;
+  margin-top:20px;
+  display: inline-block;
+}
+
+.technologies {
+  margin-top:15px;
+  font-size:3em;
+  flex-wrap:wrap;
+}
+
+.technologies i {
+  max-width:20%;
+  margin:5px;
 }
 
 
