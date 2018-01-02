@@ -48,6 +48,15 @@ h3 {
   align-self: center;
 }
 
+.col a {
+  color:inherit;
+  text-decoration: none;
+}
+
+.col a:hover {
+  text-decoration: underline;
+} 
+
 @media only screen and (min-width: 500px) {
   .page-section {
     flex-direction: row;
@@ -72,7 +81,7 @@ h3 {
 }
 
 .project-img {
-	width:200px;
+	width:300px;
 	max-width:100%;
 }
 
