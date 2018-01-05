@@ -14,7 +14,7 @@
 }
 
 .col.intro-col {
-  justify-content: center;
+  justify-content: center !important;
   text-align: center !important;
 }
 
