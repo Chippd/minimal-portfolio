@@ -91,7 +91,7 @@ function applyElement(x){
 // Function for handling smooth scrolling when user clicks down arrow
 document.getElementById("down-arrow").addEventListener("click", function(el){
 	window.scroll({
-	  top: screenHeight/2, 
+	  top: (screenHeight/2)+100, 
 	  left: 0, 
 	  behavior: 'smooth' 
 	});
