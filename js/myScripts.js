@@ -8,11 +8,8 @@ let pageHeight, ticking, screenHeight, currentEl, pageSectionArr
 // reference for above reference: http://www.html5rocks.com/en/tutorials/speed/animations/
 function checkElement(scroll_pos) {
 
-	console.log('scrollpos:', scroll_pos)
-	console.log('x = ', Math.floor(scroll_pos / screenHeight))
-
   // how many times does pageHeight go into scrollPos
-  let x = Math.floor(scroll_pos / screenHeight);
+  let x = Math.floor(scroll_pos / (screenHeight/2));
 
   // set appropriate element if not already
   if(currentEl !== x){
@@ -58,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // set total page height depending on number of projects
   pageHeight = screenHeight * pageSectionArr.length;
 
-  document.getElementById('body').style.height = pageHeight+"px";
+  document.getElementById('body').style.height = pageHeight/2+"px";
 
   // Check the scroll position, show appropriate project
   checkScroll();
@@ -89,8 +86,16 @@ function applyElement(x){
 	pageSectionArr[x].classList.remove('hidden');
 	pageSectionArr[x].classList.add("shown");
 
-
 }
+
+// Function for handling smooth scrolling when user clicks down arrow
+document.getElementById("down-arrow").addEventListener("click", function(el){
+	window.scroll({
+	  top: screenHeight/2, 
+	  left: 0, 
+	  behavior: 'smooth' 
+	});
+}); 
 
 
 
